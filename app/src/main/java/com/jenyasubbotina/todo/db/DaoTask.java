@@ -1,4 +1,4 @@
-package com.jenyasubbotina.todo;
+package com.jenyasubbotina.todo.db;
 
 import java.util.List;
 import androidx.lifecycle.LiveData;
@@ -8,6 +8,8 @@ import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
+
+import com.jenyasubbotina.todo.model.Task;
 
 @Dao
 public interface DaoTask {

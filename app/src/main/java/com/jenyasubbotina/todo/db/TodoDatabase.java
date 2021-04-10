@@ -1,4 +1,4 @@
-package com.jenyasubbotina.todo;
+package com.jenyasubbotina.todo.db;
 
 import android.content.Context;
 import android.util.Log;
@@ -7,6 +7,8 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
+
+import com.jenyasubbotina.todo.model.Task;
 
 @Database(entities = {Task.class}, version = 1, exportSchema = false)
 @TypeConverters(DateConverter.class)

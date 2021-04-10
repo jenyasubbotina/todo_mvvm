@@ -1,4 +1,4 @@
-package com.jenyasubbotina.todo
+package com.jenyasubbotina.todo.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,7 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.jenyasubbotina.todo.model.Task
+import com.jenyasubbotina.todo.adapter.TaskAdapter
 import com.jenyasubbotina.todo.databinding.ActivityMainBinding
+import com.jenyasubbotina.todo.viewmodel.MainViewModel
 
 
 class MainActivity : AppCompatActivity() {

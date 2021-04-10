@@ -1,4 +1,4 @@
-package com.jenyasubbotina.todo;
+package com.jenyasubbotina.todo.db;
 
 import java.util.Date;
 import androidx.room.TypeConverter;

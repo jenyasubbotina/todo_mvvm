@@ -1,4 +1,4 @@
-package com.jenyasubbotina.todo;
+package com.jenyasubbotina.todo.model;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;

@@ -1,4 +1,4 @@
-package com.jenyasubbotina.todo;
+package com.jenyasubbotina.todo.db;
 
 import android.os.Handler;
 import android.os.Looper;

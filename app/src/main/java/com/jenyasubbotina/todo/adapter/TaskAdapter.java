@@ -1,4 +1,4 @@
-package com.jenyasubbotina.todo;
+package com.jenyasubbotina.todo.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,6 +11,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.jenyasubbotina.todo.R;
+import com.jenyasubbotina.todo.model.Task;
 
 import java.util.List;
 
@@ -38,14 +41,14 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TodoViewHolder
         Toast.makeText(context, todo.getDescription(), Toast.LENGTH_SHORT).show();
     }
 
-    @Override
-    public int getItemCount() {
-        return todos.size();
-    }
-
     public void setTodos(List<Task> todos) {
         this.todos = todos;
         notifyDataSetChanged();
+    }
+
+    @Override
+    public int getItemCount() {
+        return todos.size();
     }
 
     static class TodoViewHolder extends RecyclerView.ViewHolder {

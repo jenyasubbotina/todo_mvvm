@@ -1,8 +1,12 @@
-package com.jenyasubbotina.todo
+package com.jenyasubbotina.todo.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.jenyasubbotina.todo.db.AppExecutors
+import com.jenyasubbotina.todo.model.Task
+import com.jenyasubbotina.todo.db.TodoDatabase
 import com.jenyasubbotina.todo.databinding.ActivityAddTaskBinding
+import com.jenyasubbotina.todo.viewmodel.AddTaskViewModel
 import java.util.*
 
 class AddTask : AppCompatActivity() {
@@ -19,8 +23,8 @@ class AddTask : AppCompatActivity() {
         mDb = TodoDatabase.getInstance(this)
     }
 
-    fun onSaveButtonClicked() {
-        val description: String = binding.taskDescription.getText().toString()
+    private fun onSaveButtonClicked() {
+        val description: String = binding.taskDescription.text.toString()
         val date = Date()
         val task = Task(description, "Personal", date)
         AppExecutors.getInstance().diskIO()
@@ -28,7 +32,7 @@ class AddTask : AppCompatActivity() {
                 if (mTaskId === DEFAULT_TASK_ID) {
                     mDb.taskDao().insertTask(task)
                 } else {
-                    task.setId(mTaskId.toLong())
+                    task.id = mTaskId.toLong()
                     viewModel.updateTask(task)
                 }
                 finish()

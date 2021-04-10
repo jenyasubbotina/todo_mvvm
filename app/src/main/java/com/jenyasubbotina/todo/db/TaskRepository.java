@@ -1,16 +1,18 @@
-package com.jenyasubbotina.todo;
+package com.jenyasubbotina.todo.db;
 
 import androidx.lifecycle.LiveData;
 
+import com.jenyasubbotina.todo.model.Task;
+
 import java.util.List;
 
-class TasksRepository  {
-    private static final String LOG_TAG = TasksRepository.class
+public class TaskRepository  {
+    private static final String LOG_TAG = TaskRepository.class
             .getSimpleName();
     private LiveData<List<Task>> tasks;
     private DaoTask taskDao;
     TodoDatabase database;
-    public TasksRepository(TodoDatabase database) {
+    public TaskRepository(TodoDatabase database) {
         this.database = database;
     }
 

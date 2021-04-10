@@ -1,14 +1,18 @@
-package com.jenyasubbotina.todo;
+package com.jenyasubbotina.todo.viewmodel;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.jenyasubbotina.todo.model.Task;
+import com.jenyasubbotina.todo.db.TaskRepository;
+import com.jenyasubbotina.todo.db.TodoDatabase;
+
 public class AddTaskViewModel extends ViewModel {
     private final LiveData<Task> task;
-    private final TasksRepository tasksRepository;
+    private final TaskRepository tasksRepository;
 
     public AddTaskViewModel(TodoDatabase database, int taskId) {
-        tasksRepository = new TasksRepository(database);
+        tasksRepository = new TaskRepository(database);
         task = tasksRepository.getloadTaskById(taskId);
     }
 
