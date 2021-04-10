@@ -9,7 +9,7 @@ import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 
 @Database(entities = {Task.class}, version = 1, exportSchema = false)
-@TypeConverters(Task.class)
+@TypeConverters(DateConverter.class)
 public abstract class TodoDatabase extends RoomDatabase {
     private static final String LOG_TAG = TodoDatabase.class
             .getSimpleName();

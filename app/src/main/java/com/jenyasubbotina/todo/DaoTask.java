@@ -11,10 +11,10 @@ import androidx.room.Update;
 
 @Dao
 public interface DaoTask {
-    @Query("SELECT * FROM task ORDER BY type")
+    @Query("SELECT * FROM tasks ORDER BY type")
     LiveData<List<Task>> loadAllTasks();
 
-    @Query("SELECT * FROM task WHERE id=:id")
+    @Query("SELECT * FROM tasks WHERE id=:id")
     LiveData<Task> loadTaskById(int id);
 
     @Insert

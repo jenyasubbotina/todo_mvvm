@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">TODO</string>
     <string name="today"> Сегодня </string>
+    <string name="fab"> Действия </string>
+    <string name="todo"> Что вы хотите сделать? </string>
+    <string name="done"> Готово </string>
+    <string name="cancel"> Отмена </string>
 </resources>

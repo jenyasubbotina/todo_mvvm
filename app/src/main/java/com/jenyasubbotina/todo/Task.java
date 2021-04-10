@@ -7,19 +7,26 @@ import androidx.room.PrimaryKey;
 
 import java.util.Date;
 
-@Entity (tableName = "task")
+@Entity (tableName = "tasks")
 public class Task {
     @PrimaryKey(autoGenerate = true)
-    private final long id;
-    private final String description;
-    private final int type;
-    @ColumnInfo(name = "done")
-    private final boolean done;
+    private long id = 0;
+    private String description;
+    private String type;
+    @ColumnInfo(name = "updatet_at")
+    private Date done;
 
-    public Task(int id, String description, int priority, boolean done) {
+    @Ignore
+    public Task(String description, String type, Date done) {
+        this.description = description;
+        this.type = type;
+        this.done = done;
+    }
+
+    public Task(long id, String description, String type, Date done) {
         this.id = id;
         this.description = description;
-        this.type = priority;
+        this.type = type;
         this.done = done;
     }
 
@@ -27,15 +34,32 @@ public class Task {
         return id;
     }
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public String getDescription() {
         return description;
     }
 
-    public int getType() {
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getType() {
         return type;
     }
 
-    public boolean getIfDone() {
+    public Date getDone() {
         return done;
+    }
+
+    public void setDone(Date done) {
+        this.done = done;
     }
 }
